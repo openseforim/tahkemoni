@@ -1,0 +1,33 @@
+{
+  "title": "Judah al-Ḥarizi, Taḥkemoni: reading edition with English translation",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "description": "<p>The Hebrew maqamat that were the model for Immanuel's Maḥberot, with an English translation line by line. Pilot: the debate of the pen and the sword.</p><p>Line-aligned Hebrew and English, one English line for each rhyme unit or verse line.</p><p>Read online: <a href=\"https://openseforim.org/tahkemoni/\">https://openseforim.org/tahkemoni/</a></p>",
+  "creators": [
+    {
+      "name": "Brand, Ezra"
+    }
+  ],
+  "license": "cc-by-sa-4.0",
+  "access_right": "open",
+  "keywords": [
+    "Judaica",
+    "Hebrew",
+    "digital humanities",
+    "translation",
+    "digital edition"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://openseforim.org/tahkemoni/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    },
+    {
+      "identifier": "https://archive.org/details/tahkemoni00hari",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-book"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "slug": "tahkemoni",
+  "order": 25,
+  "kind": "translation",
+  "title": "Judah al-Ḥarizi, *Taḥkemoni*",
+  "short_title": "*Taḥkemoni*",
+  "title_he": "ספר תחכמוני",
+  "author": "Judah al-Ḥarizi (about 1165 – 1225)",
+  "status_label": "Pilot · 1 of 50 gates",
+  "summary": "The Hebrew maqamat that were the model for Immanuel's *Maḥberot*, with an English translation line by line. Pilot: the debate of the pen and the sword.",
+  "base_edition": {
+    "label": "Maḥbarot le-Sifrut with Mosad ha-Rav Kook, Tel Aviv; text from Project Ben-Yehuda",
+    "scan_url": "https://archive.org/details/tahkemoni00hari"
+  },
+  "method": "Line-aligned Hebrew and English, one English line for each rhyme unit or verse line.",
+  "cite": "Judah al-Ḥarizi, *Taḥkemoni*, Hebrew text with English translation, ed. Ezra Brand. Open Seforim",
+  "url": "https://openseforim.org/tahkemoni/",
+  "repo": "https://github.com/openseforim/tahkemoni",
+  "licence": {
+    "name": "CC BY-SA 4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+}
