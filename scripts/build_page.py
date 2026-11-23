@@ -117,7 +117,7 @@ def gate_page(num, title, subtitle):
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
 References in <span class="ref">[gray brackets]</span> are the translator's identifications of biblical phrases.
 <a class="warn" href="#notes">⚠</a> marks an uncertain rendering.
-Fixed links: <code>#l12</code> is line 12 (its number).
+Each line number is a link to that line.
 Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-Yehuda</a>.</p>
 </details>
 </header>
