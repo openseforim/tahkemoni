@@ -163,12 +163,12 @@ def gate_page(num, title, subtitle):
     prev = f'<a href="gate-{keys[i - 1]:02d}.html" rel="prev">← {label(keys[i - 1])}</a>' if i > 0 else ""
     nxt = f'<a href="gate-{keys[i + 1]:02d}.html" rel="next">{label(keys[i + 1])} →</a>' if i + 1 < len(keys) else ""
     pn = f'<span class="pn">{prev}{nxt}</span>' if prev or nxt else ""
-    he_sub = e(he["title"]) + (f": {e(he['subtitle'])}" if he["subtitle"] else "")
     page = HEAD.format(title=f"{e(title)} — al-Ḥarizi, Taḥkemoni") + f"""<header class="chapter">
 <nav class="crumb" aria-label="Gates"><span><a href="index.html">All gates</a> · {label(num)}</span>{pn}</nav>
+<p class="title-he" lang="he" dir="rtl">{e(he["title"])}</p>
+{f'<p class="sub-he" lang="he" dir="rtl">{e(he["subtitle"])}</p>' if he["subtitle"] else ""}
 <h1>{e(title)}</h1>
 <p class="sub">{e(subtitle)}</p>
-<p class="sub-he" lang="he" dir="rtl">{he_sub}</p>
 <p class="srclink"><a href="{BYURL.format(he["source_id"])}">{"The introduction" if num == 0 else f"Gate {num}"} on Project Ben-Yehuda ↗</a></p>
 <details class="about"><summary>About this text</summary>
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
@@ -200,12 +200,11 @@ Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-
 def index_page(counts):
     def row(k):
         name = "Introduction" if k == 0 else str(k)
-        by = f'<a href="{BYURL.format(BY[k][0])}">Ben-Yehuda ↗</a>' if k in BY else "Not on Project Ben-Yehuda"
         if k in GATES:
             return (f'<tr class="done"><td><a href="gate-{k:02d}.html">{name}</a></td><td>{e(GATES[k][1])}</td>'
-                    f'<td>{counts[k]} lines</td><td>{by}</td></tr>')
+                    f'<td>{counts[k]} lines</td></tr>')
         sub = f'<span lang="he" dir="rtl">{e(BY[k][1])}</span>' if k in BY and BY[k][1] else ""
-        return f'<tr><td>{name}</td><td>{sub}</td><td>Not started</td><td>{by}</td></tr>'
+        return f'<tr><td>{name}</td><td>{sub}</td><td>Not started</td></tr>'
     rows = "\n".join(row(k) for k in range(51))
     first = min(GATES)  # 0 = the introduction
     page = HEAD.format(title="Judah al-Ḥarizi, Taḥkemoni: Hebrew and English") + f"""<header>
@@ -219,7 +218,7 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 <h2>Gates</h2>
 <div class="tablewrap">
 <table>
-<tr><th>Gate</th><th>Subject</th><th>Status</th><th>Hebrew text</th></tr>
+<tr><th>Gate</th><th>Subject</th><th>Status</th></tr>
 {rows}
 </table>
 </div>

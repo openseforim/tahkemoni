@@ -80,3 +80,5 @@ details.about[open] summary { margin-bottom: .3em; }
 .srclink a { color: var(--muted); }
 .srclink a:hover { color: var(--accent); }
 tr.done td:first-child a { font-weight: 600; }
+/* the Hebrew title first, then the English: gate name on its own line, as the English h1 */
+.title-he { font-family: "Noto Serif Hebrew", serif; font-size: 1.7rem; font-weight: 600; text-align: right; margin: .3em 0 0; line-height: 1.3; }
