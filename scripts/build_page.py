@@ -101,14 +101,25 @@ def gate_page(num, title, subtitle):
     note_rows = "\n".join(
         f'<li id="n{k}"><a href="#r{k}">⚠{k}</a> <span lang="he" dir="rtl" class="he-inline">{e(v["he"])}</span>'
         f' — {e(v["note"], quote=False)}</li>' for k, v in notes.items())
-    page = HEAD.format(title=f"{e(title)} — al-Ḥarizi, Taḥkemoni") + f"""<header>
-<p class="crumb"><a href="index.html">Judah al-Ḥarizi, <i>Taḥkemoni</i></a></p>
+    keys = sorted(GATES)
+    i = keys.index(num)
+    label = lambda k: "Introduction" if k == 0 else f"Gate {k}"
+    prev = f'<a href="gate-{keys[i - 1]:02d}.html" rel="prev">← {label(keys[i - 1])}</a>' if i > 0 else ""
+    nxt = f'<a href="gate-{keys[i + 1]:02d}.html" rel="next">{label(keys[i + 1])} →</a>' if i + 1 < len(keys) else ""
+    pn = f'<span class="pn">{prev}{nxt}</span>' if prev or nxt else ""
+    he_sub = e(he["title"]) + (f": {e(he['subtitle'])}" if he["subtitle"] else "")
+    page = HEAD.format(title=f"{e(title)} — al-Ḥarizi, Taḥkemoni") + f"""<header class="chapter">
+<nav class="crumb" aria-label="Gates"><span><a href="index.html">All gates</a> · {label(num)}</span>{pn}</nav>
 <h1>{e(title)}</h1>
-<p class="sub">{e(subtitle)} · <span lang="he" dir="rtl">{e(he["title"])}{": " + e(he["subtitle"]) if he["subtitle"] else ""}</span></p>
+<p class="sub">{e(subtitle)}</p>
+<p class="sub-he" lang="he" dir="rtl">{he_sub}</p>
+<details class="about"><summary>About this text</summary>
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
 References in <span class="ref">[gray brackets]</span> are the translator's identifications of biblical phrases.
 <a class="warn" href="#notes">⚠</a> marks an uncertain rendering.
+Fixed links: <code>#l12</code> is line 12 (its number).
 Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-Yehuda</a>.</p>
+</details>
 </header>
 <main>
 {chr(10).join(rows)}
@@ -118,7 +129,7 @@ Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-
 <ul class="notes">
 {note_rows}
 </ul>
-<p><a href="index.html">All gates</a></p>
+<nav class="crumb foot" aria-label="Gates"><span><a href="index.html">All gates</a></span>{pn}</nav>
 </footer>
 </body>
 </html>

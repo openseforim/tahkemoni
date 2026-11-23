@@ -13,7 +13,7 @@ header { padding-top: 28px; padding-bottom: 12px; border-bottom: 1px solid var(-
 h1 { font-size: 1.9rem; margin: .2em 0 .1em; }
 h2 { font-size: 1.25rem; margin: 1.8em 0 .5em; }
 a { color: var(--accent); }
-.crumb, .meta, .sub { margin: .3em 0; }
+.crumb, .meta, .sub, .sub-he { margin: .3em 0; }
 .crumb, .meta { font-size: .88rem; color: var(--muted); }
 .sub { font-size: 1.1rem; }
 main { padding-top: 14px; padding-bottom: 40px; }
@@ -63,3 +63,16 @@ th { font: 600 .78rem system-ui, sans-serif; color: var(--muted); text-transform
 .verse .en .h2 { padding-left: 1.6em; }
 .verse .he .h2 { padding-right: 1.6em; }
 .verse .row { padding-top: 4px; padding-bottom: 4px; }
+
+/* chapter header, the same as in the Me'or Einayim and Immanuel readers */
+nav.crumb { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; }
+nav.crumb .pn a { margin-left: .8rem; }
+nav.crumb.foot { margin: 1.4em 0 0; }
+.sub-he { font-family: "Noto Serif Hebrew", serif; font-size: 1.15rem; text-align: right; color: var(--fg); }
+details.about { margin: .5em 0 .2em; }
+details.about summary { cursor: pointer; color: var(--muted); font: .85rem system-ui, sans-serif; }
+details.about summary:hover { color: var(--accent); }
+details.about[open] summary { margin-bottom: .3em; }
+@media (max-width: 720px) {
+  nav.crumb .pn a { margin-left: 0; margin-right: .8rem; }
+}
