@@ -26,6 +26,61 @@ GATES = {
     1: ("The First Gate", "How the book came to be, and in whose name it was composed: a friend's challenge, the defense of Hebrew, and the praise of the Nasi Josiah"),
     40: ("The Fortieth Gate", "The pen and the sword: which is more needed by men and by their wars"),
 }
+# Project Ben-Yehuda texts: gate number -> (work id, Hebrew subtitle). Gate 35 is not on Project Ben-Yehuda.
+BY = {
+    0: (32702, ""),
+    1: (32703, "מוֹדִיעַ הֲוָיַת הַסֵּפֶר, וְעַל שֵׁם מִי חִבְּרוֹ בְּאִמְרֵי שֶׁפֶר"),
+    2: (7763, "בְּשֶבַח הַמּוֹכִיחַ, הַמַּהְבִּיל עִנְיְנֵי הָעוֹלָם וּמֵפִיץ וּמַדִּיחַ"),
+    3: (1738, "הַמּוֹדִיעַ תֹּקֶף הַשִּׁיר וּמַהֲלָלוֹ, וּשְׁמוֹת הַמְשׁוֹרְרִים אִישׁ אִישׁ עַל דִּגְלוֹ"),
+    4: (32704, "בְּשֶׁבַח שְׁנֵי מְשׁוֹרְרִים, מִי יָשִׁיר שִׁירִים יוֹתֵר יְקָרִים"),
+    5: (32705, "בְּשֶׁבַח י\"ב מְשׁוֹרְרִים, אֲשֶׁר כָּל אֶחָד עַל חֹדֶשּ אֶחָד קוֹלוֹ יָרִים."),
+    6: (592, "בְּעִנְיַן זִוּוּג אִשָּה כְעוּרָה, חָשַׁךְ מִשְּׁחוֹר תָּאֳרָה"),
+    7: (8405, "מִשְּׁנֵי גִבּוֹרִים, הַנִּלְחָמִים כִּשְׁנֵי כְפִירִים"),
+    8: (6786, "בְּמַהֲלַל אִגֶּרֶת יְשָׁרָה, וּכְעִירוּתָהּ בִּקְרִיאַת אוֹתָהּ נְזוֹרָה"),
+    9: (126, "בִּשְׁלֹשִׁים מְשׁוֹרְרִים מִתְהַלְּלִים, מִי יַעֲשֶׂה שִׁירִים יוֹתֵר מְעֻלִּים"),
+    10: (7444, "בַּחֲסִידוּת הַכָּפְרִי, כְּעֵת בַּמָּרוֹם יַמְרִיא"),
+    11: (8082, "בְּמַהֲלַל מְלִיצָה בְּכָל מִלּוֹתֶיהָ רֵי\"שׁ, וְהַשְּׁנִיָה לָהּ"),
+    12: (32706, "מֵהַכִּילוּת וְהַנְּדִיבוּת וּמְרִיבוֹתֵיהֶם. מַחְלְקוֹתָם וּמִלְחֲמוֹתֵיהֶם."),
+    13: (32724, "וִכּוּחַ הַנֶּפֶשׁ עִם הַגּוּף וְהַשֵּׂכֶל. מִי מִשְּׁלָשְׁתָּם הַנּוֹכֵל"),
+    14: (32725, "בְּסֵדֶר תְּפִלָּה יְקָרָה. לֹא יִשָּׁקֵל כֶּסֶף מְחִירָהּ"),
+    15: (32726, "תְּפִלָּה לְמשֶׁה אִישׁ הָאֱלֹהִים. הַפּוֹתַחַת לְכָל אוֹמְרָהּ שַׁעֲרֵי גְבוֹהִים."),
+    16: (7111, "בְּוִכּוּחַ שִבְעָה מְשוֹרְרִים. מִי יְחַבֵּר שִירִים יְקָרִים"),
+    17: (32994, "בְּוִכּוּחַ הַמִּין וְהַמַּאֲמִין. זֶה עַל שְׂמֹאל וְזֶה עַל יָמִין."),
+    18: (32995, "בִּידִיעַת הַשִּׁיר מֵאַיִן עָלָה וְיָרָד. אִם מִבְּנֵי עֲרָב אוֹ מִבְּנֵי סְפָרָד"),
+    19: (33359, "מִשְׁבְעָה בַחוּרֵי חֶמֶד טוֹבָה. מִתְוַכְּחִים אֵיזוֹ מִדָּה טוֹבָה"),
+    20: (32996, "מִשֶּׁבַע הַבְּתוּלוֹת וְתַחְבּוּלוֹתֵיהֶן"),
+    21: (33016, "בְּעָרְמַת חֶבֶר הַקֵּינִי. עִם הַכָּפְרִי הֶעָנִי"),
+    22: (33017, "עִנְיַן הָאִישׁ הַחוֹזֶה בַכּוֹכַבִים וּמַזָּלוֹת וּבְעָרְמָתוֹ וְשִׂכְלוֹ יְדַבֵּר גְּדוֹלוֹת"),
+    23: (33018, "בְּצָרַת חֶבֶר הַקֵּינִי וְדַאֲגָתוֹ. וּמֶמְשַׁלְתּוֹ וּמַעֲלָתוֹ."),
+    24: (33019, "בִּשְׁלִיחַ צִבּוּר וּתְפִלּוֹתָיו. וְסִפּוּר שִׁבּוּשָׁיו וְטָעֻיוֹתָיו."),
+    25: (33020, "כַּצַּיָּד הַגִּבּוֹר וְהֶחָזָק. רָצוֹא וָשׁוֹב כְּמַרְאֵה הַבָּזָק"),
+    26: (33021, "בְּסִפּוּר עִנְיְנֵי הַדְּרָכִים. וְכָל אֲשֶׁר בָּם נִמְשָׁכִים."),
+    27: (33022, "בְּשֶׁבַח הַיַיִן וְתוֹעֲלוֹתָיו. וְהַמִּקְרִים אֲשֶׁר יִקְרוּ לְשׁוֹתָיו"),
+    28: (33023, "בְּשִׁבְחֵי צִיּוֹן וִירוּשָׁלַיִם. וּבַקָּשָׁה רוּמָהּ תַּעֲלֶה לַשָּׁמַיִם."),
+    29: (33024, "הָאָב וּבְנוֹ לְרֹעַ זְמַנָּם. שׁוֹאֲלִים לִמְלֹאת סִפְקָם."),
+    30: (33025, "הָרוֹפֵא הָאוֹרֵחַ. וּמִינֵי תְּרוּפוֹתָיו בָּרְחוֹבוֹת צוֹרֵחַ"),
+    31: (32730, "כַּפָּרָשׁ אֲשֶׁר הֵתֵל בְּגִבּוֹרִים. וַיַּשְׁקֵם כּוֹס לַעֲנָה וְתַמְרוּרִים"),
+    32: (32731, "בְּבָחוּר בְּשִׁירִים חֲיָלִים יְגַבֵּר. וְהַזָּקֵן מֵשִׁיב סְלָעִים יְשַׁבֵּר."),
+    33: (32732, "בְּשִׁירִים עַל אַלְפָ\"א בֵיתָ\"א יְקָרִים. מֵהַרֲרֵי שֵׂכֶל גְּזוּרִים."),
+    34: (1441, "בְּסִפּוּר הַסּוֹחֵר לָאוֹרֵחַ מֶמְשַׁלְתּוֹ. וּבְהַרְאוֹתוֹ אֶת עֹשֶׁר גְּדֻלָּתוֹ"),
+    36: (33031, "בִּשְׁאֵלוֹת וּתְשׁוּבוֹת. זֶה שׁוֹאֵל וְזֶה מֵשִׁיב בְּמִלִּים עֲרֵבוֹת"),
+    37: (33032, "מִן הַנָּשׁוּךְ מֵהַנָּחָשׁ. אֲשֶׁר אֵין לוֹ לָחַשׁ"),
+    38: (33033, "בִּסְפִינָה מִסְתָּעֶרֶת בַּיָּם. מִשְּאוֹן גַּלָּיו וְדָכְיָם"),
+    39: (33034, "וִכּוּחַ הַלַּיְלָה וְהַיּוֹם. מִי הוּא יוֹתֵר נוֹרָא וְאָיֹם"),
+    40: (33035, "הָעֵט וְהַחֶרֶב וּמַחְלְקוֹתָם. מִי יוֹתֵר נִצְרָךְ לְאִישִׁים וּלְמִלְחַמְתָּם"),
+    41: (33036, "מַחֲלֹקֶת הָאִישׁ וְהָאִשָּׁה. מִי הוּא יוֹתֵר קִיּוּם הָעוֹלָם וְאִשָּׁהּ"),
+    42: (33037, "מְרִיבַת הַכִּילוּת וְהַנְּדִיבוּת. מִי יוֹתֵר נִכְבָּד בֵּין אַנְשֵׁי הַחֲשִׁיבוּת"),
+    43: (33038, "מְרִיבַת הַיָּם וְהַיַּבָּשָׁה. מִי הִיא יוֹתֵר חֲשׁוּבָה וּדְרוּשָׁה"),
+    44: (33360, "בְּרַב הַשוֹאֵל לְתַלְמִידָיו שְׁאֵלוֹת. לְהַבְחִין תַּלְמִידָיו בַּתְּשׁוּבוֹת הָעוֹלוֹת"),
+    45: (33361, "מִמִּשְׁלֵי הַחָכְמָה. וְתַעֲלוּמוֹת סְתוּמָה"),
+    46: (6457, "סִפּוּר אַנְשֵׁי הַמְּדִינוֹת וּמַעֲלוֹתֵיהֶם. וְחֶסְרוֹנָם וּגְרִיעוּת מִדּוֹתֵיהֶם"),
+    47: (32733, "בְּשֶׁבַח כָּל מְדִינָה. זֹאת אוֹמֶרֶת אֲנִי אֶעֱבֹר רִאשׁוֹנָה"),
+    48: (32734, "הַחוֹלֶה וְהָרוֹפֵא. בְּתַחְלוּאֵי הַחֵשֶׁק מֻכֶּה וְנִסְפֶּה."),
+    49: (32735, "בְּשֶּׁבַח פֵּרוֹת אִילָנֵי הַגָּן"),
+    50: (32736, "בְּשִׁירִים נִפְרָדִים. מִזָּהָב וּמִפָּז רַב נֶחֱמָדִים"),
+}
+BYURL = "https://benyehuda.org/read/{}"
+
 HEAD = """<!doctype html>
 <html lang="en">
 <head>
@@ -114,6 +169,7 @@ def gate_page(num, title, subtitle):
 <h1>{e(title)}</h1>
 <p class="sub">{e(subtitle)}</p>
 <p class="sub-he" lang="he" dir="rtl">{he_sub}</p>
+<p class="srclink"><a href="{BYURL.format(he["source_id"])}">{"The introduction" if num == 0 else f"Gate {num}"} on Project Ben-Yehuda ↗</a></p>
 <details class="about"><summary>About this text</summary>
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
 References in <span class="ref">[gray brackets]</span> are the translator's identifications of biblical phrases.
@@ -142,8 +198,15 @@ Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-
 
 
 def index_page(counts):
-    rows = "\n".join(f'<tr><td><a href="gate-{k:02d}.html">{k or "Introduction"}</a></td><td>{e(v[1])}</td><td>{counts[k]} lines</td></tr>'
-                     for k, v in sorted(GATES.items()))
+    def row(k):
+        name = "Introduction" if k == 0 else str(k)
+        by = f'<a href="{BYURL.format(BY[k][0])}">Ben-Yehuda ↗</a>' if k in BY else "Not on Project Ben-Yehuda"
+        if k in GATES:
+            return (f'<tr class="done"><td><a href="gate-{k:02d}.html">{name}</a></td><td>{e(GATES[k][1])}</td>'
+                    f'<td>{counts[k]} lines</td><td>{by}</td></tr>')
+        sub = f'<span lang="he" dir="rtl">{e(BY[k][1])}</span>' if k in BY and BY[k][1] else ""
+        return f'<tr><td>{name}</td><td>{sub}</td><td>Not started</td><td>{by}</td></tr>'
+    rows = "\n".join(row(k) for k in range(51))
     first = min(GATES)  # 0 = the introduction
     page = HEAD.format(title="Judah al-Ḥarizi, Taḥkemoni: Hebrew and English") + f"""<header>
 <h1>Judah al-Ḥarizi, <i>Taḥkemoni</i></h1>
@@ -156,9 +219,8 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 <h2>Gates</h2>
 <div class="tablewrap">
 <table>
-<tr><th>Gate</th><th>Subject</th><th>Status</th></tr>
+<tr><th>Gate</th><th>Subject</th><th>Status</th><th>Hebrew text</th></tr>
 {rows}
-<tr><td>2–39, 41–50</td><td></td><td>Not started</td></tr>
 </table>
 </div>
 <a class="cta" href="gate-{first:02d}.html">Read the {e(GATES[first][0])}, side by side →</a>
@@ -177,7 +239,7 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 <div class="tablewrap">
 <table>
 <tr><th>Source</th><th>Contents</th><th>Notes</th></tr>
-<tr><td><a href="https://benyehuda.org/author/86">Project Ben-Yehuda</a></td><td>The introduction and all fifty gates, one text for each gate</td><td>Vocalized. In the project's <a href="https://github.com/projectbenyehuda/public_domain_dump">public-domain dump</a> (folder <code>txt/p86/</code>). Most gates name the edition published by Maḥbarot le-Sifrut with Mosad ha-Rav Kook, Tel Aviv. This is the text used here.</td></tr>
+<tr><td><a href="https://benyehuda.org/author/86">Project Ben-Yehuda</a></td><td>The introduction and 49 of the 50 gates, one text for each (gate 35 is not there)</td><td>Vocalized. In the project's <a href="https://github.com/projectbenyehuda/public_domain_dump">public-domain dump</a> (folder <code>txt/p86/</code>). Most gates name the edition published by Maḥbarot le-Sifrut with Mosad ha-Rav Kook, Tel Aviv. This is the text used here.</td></tr>
 <tr><td><a href="https://archive.org/details/tahkemoni00hari">Lagarde, Göttingen 1883</a></td><td>Scan of P. de Lagarde's edition (400 ppi)</td><td>For a check of readings.</td></tr>
 <tr><td><a href="https://archive.org/details/TachkemoniYehudaAlchariziWarsaw1899">Kaminka, Warsaw 1899</a></td><td>Scan of A. Kaminka's edition with commentary</td><td>For a check of readings and allusions.</td></tr>
 </table>

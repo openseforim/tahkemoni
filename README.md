@@ -20,7 +20,7 @@ English text and the scripts that build the side-by-side pages.
 
 ## Sources
 
-- **Hebrew text:** [Project Ben-Yehuda](https://benyehuda.org/author/86), the introduction and all fifty gates,
+- **Hebrew text:** [Project Ben-Yehuda](https://benyehuda.org/author/86), the introduction and 49 of the 50 gates (gate 35 is not there),
   vocalized, from the project's [public-domain dump](https://github.com/projectbenyehuda/public_domain_dump)
   (folder `txt/p86/`; the introduction is `m32702.txt`, gate 40 is `m33035.txt`). Most gates name the edition published by Maḥbarot le-Sifrut with
   Mosad ha-Rav Kook, Tel Aviv. No OCR was needed.

@@ -76,3 +76,7 @@ details.about[open] summary { margin-bottom: .3em; }
 @media (max-width: 720px) {
   nav.crumb .pn a { margin-left: 0; margin-right: .8rem; }
 }
+.srclink { margin: .2em 0; font: .85rem system-ui, sans-serif; text-align: right; }
+.srclink a { color: var(--muted); }
+.srclink a:hover { color: var(--accent); }
+tr.done td:first-child a { font-weight: 600; }
