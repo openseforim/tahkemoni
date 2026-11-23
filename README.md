@@ -2,6 +2,8 @@
 
 Site: <https://openseforim.org/tahkemoni/>
 
+Cite as: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24458135.svg)](https://doi.org/10.5281/zenodo.24458135) (Zenodo; this DOI always points to the newest release)
+
 Judah al-Ḥarizi (about 1165 – 1225) wrote the *Taḥkemoni*, fifty gates (maqamat) of Hebrew rhymed prose with
 poems set into it. It was the model for Immanuel of Rome's *Maḥberot*
 ([openseforim/immanuel](https://github.com/openseforim/immanuel)). This repository holds a line-aligned Hebrew and

@@ -17,6 +17,7 @@
   "cite": "Judah al-Ḥarizi, *Taḥkemoni*, Hebrew text with English translation, ed. Ezra Brand. Open Seforim",
   "url": "https://openseforim.org/tahkemoni/",
   "repo": "https://github.com/openseforim/tahkemoni",
+  "doi": "10.5281/zenodo.24458135",
   "licence": {
     "name": "CC BY-SA 4.0",
     "url": "https://creativecommons.org/licenses/by-sa/4.0/"
