@@ -14,8 +14,9 @@ English text and the scripts that build the side-by-side pages.
 | Gate | Status |
 |---|---|
 | Introduction | 23-Nov-2026. 684 lines. Allusions not verified. 20 uncertain renderings. |
+| 1 (how the book came to be; the patron Josiah) | 23-Nov-2026. 384 lines. Allusions not verified. 15 uncertain renderings. |
 | 40 (the pen and the sword) | Pilot, 23-Nov-2026. 206 lines. Allusions not verified. 5 uncertain renderings. |
-| 1–39, 41–50 | Not started |
+| 2–39, 41–50 | Not started |
 
 ## Sources
 

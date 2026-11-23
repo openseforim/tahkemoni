@@ -40,8 +40,27 @@ def main():
 
     blocks, verse = [], []
 
+    def inner_stop(p):  # a full stop inside the paragraph, not only at its end
+        return bool(re.search(r"\.\s+\S", p))
+
+    def scripture(p):  # a refrain line that quotes a verse: "ככתוב: למרבה המשרה (ישעיה ט, ו)."
+        return strip(p).startswith("ככתוב")
+
     def flush_verse():
         nonlocal verse
+        if verse and all(inner_stop(p) for p in verse if not scripture(p)) and len(verse) > 2:
+            # each paragraph is a whole verse line, its halves split by an inner full stop (gate 1, the poems
+            # for the Nasi); a scripture refrain is a line of its own
+            lines = []
+            for p in verse:
+                if scripture(p):
+                    lines.append(p)
+                else:
+                    a, b = re.split(r"(?<=\.)\s+", p, maxsplit=1)
+                    lines.append(f"{a} / {b}")
+            blocks.append({"kind": "verse", "lines": lines})
+            verse = []
+            return
         if verse:
             heading = None
             if len(verse) % 2 and len(verse) > 1 and not verse[-1].rstrip().endswith((".", ",", ";")):
@@ -56,8 +75,12 @@ def main():
                 blocks.append({"kind": "prose", "lines": [heading]})
             verse = []
 
+    prev = ""
     for p in body:
-        single = len(p) < 60 and not p.endswith(":")
+        # a short paragraph is a half-line of verse; one that ends with a colon is a prose lead-in, unless the
+        # paragraph before it was already the lead-in (then it opens the poem, as in gate 1)
+        single = (len(p) < 60 and (not p.endswith(":") or (prev.endswith(":") and inner_stop(p)))) or scripture(p)
+        prev = p
         if single:
             verse.append(p)
             continue

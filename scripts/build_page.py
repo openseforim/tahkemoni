@@ -23,6 +23,7 @@ e = html.escape
 # gates that have a page: number -> (English title, subtitle)
 GATES = {
     0: ("Introduction", "The author's preface: praise of God, the soul and the intellect, the Hebrew language as a bride, why the book was written, and the dedication"),
+    1: ("The First Gate", "How the book came to be, and in whose name it was composed: a friend's challenge, the defense of Hebrew, and the praise of the Nasi Josiah"),
     40: ("The Fortieth Gate", "The pen and the sword: which is more needed by men and by their wars"),
 }
 HEAD = """<!doctype html>
@@ -157,7 +158,7 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 <table>
 <tr><th>Gate</th><th>Subject</th><th>Status</th></tr>
 {rows}
-<tr><td>1–39, 41–50</td><td></td><td>Not started</td></tr>
+<tr><td>2–39, 41–50</td><td></td><td>Not started</td></tr>
 </table>
 </div>
 <a class="cta" href="gate-{first:02d}.html">Read the {e(GATES[first][0])}, side by side →</a>
