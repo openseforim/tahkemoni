@@ -24,6 +24,7 @@ def strip(s):
 
 def units(text):
     """Rhyme units: split after a full stop that is followed by a space."""
+    text = re.sub(r"\.(?=[א-ת])", ". ", text)  # a full stop with no space after it ("לִמְאוֹרוֹת.לְמַעַן")
     return [u.strip() for u in re.split(r"(?<=\.)\s+", text) if u.strip()]
 
 
@@ -31,7 +32,10 @@ def main():
     src, num = Path(sys.argv[1]), int(sys.argv[2])
     t = src.read_text(encoding="utf-8").split("את הטקסט")[0]  # drop the Ben-Yehuda credit line
     paras = [" ".join(p.split()) for p in re.split(r"\n\s*\n", t) if p.strip()]
-    title, subtitle, body = paras[0], paras[1], paras[2:]
+    if num == 0:  # the introduction has a title and no subtitle line
+        title, subtitle, body = paras[0], "", paras[1:]
+    else:
+        title, subtitle, body = paras[0], paras[1], paras[2:]
     title = re.sub(r"^ספר תחכמוני\s*[-–]\s*", "", title)
 
     blocks, verse = [], []
@@ -39,9 +43,17 @@ def main():
     def flush_verse():
         nonlocal verse
         if verse:
+            heading = None
+            if len(verse) % 2 and len(verse) > 1 and not verse[-1].rstrip().endswith((".", ",", ";")):
+                heading = verse.pop()  # a heading line after a poem ("In the name of Him who teaches man knowledge")
+            elif len(verse) == 1:
+                heading = verse.pop()
             if len(verse) % 2:
                 sys.exit(f"odd number of half-lines in a poem: {strip(verse[0])[:40]}")
-            blocks.append({"kind": "verse", "lines": [f"{verse[i]} / {verse[i + 1]}" for i in range(0, len(verse), 2)]})
+            if verse:
+                blocks.append({"kind": "verse", "lines": [f"{verse[i]} / {verse[i + 1]}" for i in range(0, len(verse), 2)]})
+            if heading:
+                blocks.append({"kind": "prose", "lines": [heading]})
             verse = []
 
     for p in body:

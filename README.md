@@ -13,14 +13,15 @@ English text and the scripts that build the side-by-side pages.
 
 | Gate | Status |
 |---|---|
+| Introduction | 23-Nov-2026. 684 lines. Allusions not verified. 20 uncertain renderings. |
 | 40 (the pen and the sword) | Pilot, 23-Nov-2026. 206 lines. Allusions not verified. 5 uncertain renderings. |
-| Introduction, 1–39, 41–50 | Not started |
+| 1–39, 41–50 | Not started |
 
 ## Sources
 
 - **Hebrew text:** [Project Ben-Yehuda](https://benyehuda.org/author/86), the introduction and all fifty gates,
   vocalized, from the project's [public-domain dump](https://github.com/projectbenyehuda/public_domain_dump)
-  (folder `txt/p86/`; gate 40 is `m33035.txt`). Most gates name the edition published by Maḥbarot le-Sifrut with
+  (folder `txt/p86/`; the introduction is `m32702.txt`, gate 40 is `m33035.txt`). Most gates name the edition published by Maḥbarot le-Sifrut with
   Mosad ha-Rav Kook, Tel Aviv. No OCR was needed.
 - **Scans for checking readings:** [Lagarde, Göttingen 1883](https://archive.org/details/tahkemoni00hari);
   [Kaminka, Warsaw 1899](https://archive.org/details/TachkemoniYehudaAlchariziWarsaw1899) (with commentary).
@@ -50,6 +51,8 @@ gh api -H "Accept: application/vnd.github.raw" repos/projectbenyehuda/public_dom
 py -3.13 scripts/extract_hebrew.py source/m33035.txt 40
 py -3.13 scripts/build_page.py
 ```
+
+The introduction is gate `0` (`data/gate-00.*`). A long text can be written in part files (`data/parts/`) and joined, with one blank line between parts.
 
 Add a new gate to `GATES` in `scripts/build_page.py`. The build stops if the Hebrew and English do not align.
 

@@ -22,6 +22,7 @@ e = html.escape
 
 # gates that have a page: number -> (English title, subtitle)
 GATES = {
+    0: ("Introduction", "The author's preface: praise of God, the soul and the intellect, the Hebrew language as a bride, why the book was written, and the dedication"),
     40: ("The Fortieth Gate", "The pen and the sword: which is more needed by men and by their wars"),
 }
 HEAD = """<!doctype html>
@@ -103,7 +104,7 @@ def gate_page(num, title, subtitle):
     page = HEAD.format(title=f"{e(title)} — al-Ḥarizi, Taḥkemoni") + f"""<header>
 <p class="crumb"><a href="index.html">Judah al-Ḥarizi, <i>Taḥkemoni</i></a></p>
 <h1>{e(title)}</h1>
-<p class="sub">{e(subtitle)} · <span lang="he" dir="rtl">{e(he["title"])}: {e(he["subtitle"])}</span></p>
+<p class="sub">{e(subtitle)} · <span lang="he" dir="rtl">{e(he["title"])}{": " + e(he["subtitle"]) if he["subtitle"] else ""}</span></p>
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
 References in <span class="ref">[gray brackets]</span> are the translator's identifications of biblical phrases.
 <a class="warn" href="#notes">⚠</a> marks an uncertain rendering.
@@ -129,9 +130,9 @@ Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-
 
 
 def index_page(counts):
-    rows = "\n".join(f'<tr><td><a href="gate-{k:02d}.html">{k}</a></td><td>{e(v[1])}</td><td>{counts[k]} lines</td></tr>'
+    rows = "\n".join(f'<tr><td><a href="gate-{k:02d}.html">{k or "Introduction"}</a></td><td>{e(v[1])}</td><td>{counts[k]} lines</td></tr>'
                      for k, v in sorted(GATES.items()))
-    first = min(GATES)
+    first = min(GATES)  # 0 = the introduction
     page = HEAD.format(title="Judah al-Ḥarizi, Taḥkemoni: Hebrew and English") + f"""<header>
 <h1>Judah al-Ḥarizi, <i>Taḥkemoni</i></h1>
 <p class="sub">The Hebrew maqamat, with an English translation line by line · <span lang="he" dir="rtl">ספר תחכמוני</span></p>
@@ -145,7 +146,7 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 <table>
 <tr><th>Gate</th><th>Subject</th><th>Status</th></tr>
 {rows}
-<tr><td>Introduction, 1–39, 41–50</td><td></td><td>Not started</td></tr>
+<tr><td>1–39, 41–50</td><td></td><td>Not started</td></tr>
 </table>
 </div>
 <a class="cta" href="gate-{first:02d}.html">Read the {e(GATES[first][0])}, side by side →</a>
