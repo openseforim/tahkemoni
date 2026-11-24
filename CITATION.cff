@@ -5,7 +5,7 @@ type: dataset
 authors:
   - family-names: Brand
     given-names: Ezra
-abstract: "The Hebrew maqamat that were the model for Immanuel's Maḥberot, with an English translation line by line. Pilot: the debate of the pen and the sword. Line-aligned Hebrew and English, one English line for each rhyme unit or verse line."
+abstract: "The Hebrew maqamat that were the model for Immanuel's Maḥberot, with an English translation line by line: the author's introduction, and the debate of the pen and the sword. Line-aligned Hebrew and English, one English line for each rhyme unit or verse line."
 license: CC-BY-SA-4.0
 url: "https://openseforim.org/tahkemoni/"
 repository-code: "https://github.com/openseforim/tahkemoni"
