@@ -201,7 +201,7 @@ def index_page(counts):
     def row(k):
         name = "Introduction" if k == 0 else str(k)
         if k in GATES:
-            return (f'<tr class="done"><td><a href="gate-{k:02d}.html">{name}</a></td><td>{e(GATES[k][1])}</td>'
+            return (f'<tr class="done"><td><a href="gate-{k:02d}.html">{name}</a></td><td><a href="gate-{k:02d}.html">{e(GATES[k][1])}</a></td>'
                     f'<td>{counts[k]} lines</td></tr>')
         sub = f'<span lang="he" dir="rtl">{e(BY[k][1])}</span>' if k in BY and BY[k][1] else ""
         return f'<tr><td>{name}</td><td>{sub}</td><td>Not started</td></tr>'
