@@ -67,19 +67,29 @@ def main():
                 heading = verse.pop()  # a heading line after a poem ("In the name of Him who teaches man knowledge")
             elif len(verse) == 1:
                 heading = verse.pop()
+            tail = None
             if len(verse) % 2:
-                sys.exit(f"odd number of half-lines in a poem: {strip(verse[0])[:40]}")
+                tail = verse.pop()  # a short prose line after the poem ("אמר המגיד: וכאשר כלה דבריו.")
             if verse:
                 blocks.append({"kind": "verse", "lines": [f"{verse[i]} / {verse[i + 1]}" for i in range(0, len(verse), 2)]})
             if heading:
                 blocks.append({"kind": "prose", "lines": [heading]})
+            if tail:
+                blocks.append({"kind": "prose", "lines": units(tail)})
             verse = []
 
     prev = ""
     for p in body:
+        if re.fullmatch(r"אות \S+", strip(p)):  # a letter heading inside an alphabet poem (gate 33)
+            flush_verse()
+            blocks.append({"kind": "prose", "lines": [p]})
+            prev = p
+            continue
         # a short paragraph is a half-line of verse; one that ends with a colon is a prose lead-in, unless the
         # paragraph before it was already the lead-in (then it opens the poem, as in gate 1)
         single = (len(p) < 60 and (not p.endswith(":") or (prev.endswith(":") and inner_stop(p)))) or scripture(p)
+        if verse and len(verse) % 2 and len(p) < 60 and not inner_stop(p):
+            single = True  # the second half of a verse line, even when it ends with a colon (gate 24)
         prev = p
         if single:
             verse.append(p)

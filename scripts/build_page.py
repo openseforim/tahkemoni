@@ -223,6 +223,9 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
 </table>
 </div>
 <a class="cta" href="gate-{first:02d}.html">Read the {e(GATES[first][0])}, side by side →</a>
+<p><b><a href="background.html">Background for the reader</a></b>: al-Ḥarizi's life and travels, what a maqama is, the
+biblical inlay (<i>shibbutz</i>), how the fifty gates are built, the world of the book, the editions, and how to read
+this one, with a list of further reading.</p>
 
 <h2>Method</h2>
 <ul>
@@ -258,10 +261,34 @@ Immanuel of Rome's <a href="/immanuel/"><i>Maḥberot</i></a>. This site shows t
     print("wrote docs/index.html")
 
 
+def background_page():
+    """docs/background.html from BACKGROUND.md (a general background note for readers)."""
+    import markdown
+    md = (ROOT / "BACKGROUND.md").read_text(encoding="utf-8")
+    md = re.sub(r"^# .*\n", "", md, count=1)
+    body = markdown.markdown(md, extensions=["extra"])
+    page = HEAD.format(title="Background for the reader — al-Ḥarizi, Taḥkemoni") + f"""<header class="chapter">
+<nav class="crumb" aria-label="Gates"><span><a href="index.html">All gates</a> · Background</span></nav>
+<p class="title-he" lang="he" dir="rtl">ספר תחכמוני</p>
+<h1>Background for the reader</h1>
+<p class="sub">Judah al-Ḥarizi and his <i>Taḥkemoni</i>: the author, the form, the world of the book, and the editions</p>
+</header>
+<article class="bgnote">
+{body}
+</article>
+<footer><nav class="crumb foot" aria-label="Gates"><span><a href="index.html">All gates</a></span></nav></footer>
+</body>
+</html>
+"""
+    (ROOT / "docs" / "background.html").write_text(page, encoding="utf-8")
+    print("wrote docs/background.html")
+
+
 def main():
     (ROOT / "docs").mkdir(exist_ok=True)
     counts = {k: gate_page(k, *v) for k, v in GATES.items()}
     index_page(counts)
+    background_page()
 
 
 if __name__ == "__main__":
