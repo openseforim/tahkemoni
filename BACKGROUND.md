@@ -79,8 +79,9 @@ episodes; some kinds recur:
 - **Prayers and serious pieces.** Two long prayers (gates 14–15), a sermon on the vanity of the world (gate 2),
   Jerusalem (gate 28), the tomb of Ezra (gate 35).
 - **Literary history and travel.** Gates 3 and 18 survey the Hebrew poets of Spain, from Samuel ha-Nagid and Solomon
-  ibn Gabirol to Moses ibn Ezra and Judah Halevi; gate 46 describes the Jewish communities of the East that al-Ḥarizi
-  visited, city by city, with praise and satire.
+  ibn Gabirol to Moses ibn Ezra and Judah Halevi; gate 46 describes the Jewish communities that al-Ḥarizi knew, from
+  Toledo, Barcelona and Provence to Alexandria, Cairo, the Land of Israel, Damascus, Aleppo, Mosul and Baghdad, city by
+  city, with praise and satire.
 - **Collections of poems.** The last gate gathers many separate poems.
 
 The gates do not form a single story, and they can be read in any order.
@@ -116,8 +117,9 @@ first printed in Constantinople in 1578. Modern editions:
 
 - **Hebrew.** The Hebrew is the vocalized text of Project Ben-Yehuda (from Toporowsky's edition), one rhyme unit per
   line in the prose and one verse line per line in the poems, with the two halves of a verse line set apart. Gate 35 is
-  not on Ben-Yehuda and is taken from Kaminka's edition. Where the Ben-Yehuda text of a gate is incomplete, the page
-  of that gate says so.
+  not on Ben-Yehuda and is taken from Kaminka's edition. The end of every gate was compared with Kaminka's edition;
+  where the Ben-Yehuda text stops early (gates 5, 21 and 23), the missing passage is added from Kaminka, unvocalized,
+  and marked on the page.
 - **English.** One English line for each Hebrew line, close to the Hebrew, with the sense first and occasional rhyme.
   It is by Claude (Anthropic), directed and reviewed by Ezra Brand.
 - **Brackets and notes.** [Gray brackets] give biblical and rabbinic sources. ⚠ marks a rendering that is uncertain or

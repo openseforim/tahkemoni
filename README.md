@@ -11,12 +11,17 @@ English text and the scripts that build the side-by-side pages.
 
 ## Status
 
-| Gate | Status |
-|---|---|
-| Introduction | 23-Nov-2026. 684 lines. Allusions not verified. 20 uncertain renderings. |
-| 1 (how the book came to be; the patron Josiah) | 23-Nov-2026. 384 lines. Allusions not verified. 15 uncertain renderings. |
-| 40 (the pen and the sword) | Pilot, 23-Nov-2026. 206 lines. Allusions not verified. 5 uncertain renderings. |
-| 2–39, 41–50 | Not started |
+Complete, 25-Nov-2026: the introduction and all 50 gates, 14,867 lines, Hebrew and English line by line, with notes
+for the uncertain renderings. Allusions in brackets are the translator's identifications, not yet checked against a
+concordance.
+
+- **Completeness.** The end of every gate was compared with Kaminka's edition (Warsaw 1899). The Ben-Yehuda text stops
+  early in gates 5 (after the third of twelve months), 21 and 23; the missing passages are added from Kaminka,
+  unvocalized, as blocks with a `source` key in `data/gate-NN.he.json`, and marked on the page.
+- **Gate 35** (the tomb of Ezra) is not on Project Ben-Yehuda; its Hebrew is transcribed from Kaminka, pp. 289–296.
+- **Line splitting.** `scripts/extract_hebrew.py` splits the dump; where it paired verse halves wrongly or broke a
+  sentence between blocks, the translators moved whole words or lines by hand (no letters changed).
+- **Removed:** two Project Ben-Yehuda footnotes that had come in as text (gates 18 and 22) and their note digits.
 
 ## Sources
 

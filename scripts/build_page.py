@@ -24,7 +24,55 @@ e = html.escape
 GATES = {
     0: ("Introduction", "The author's preface: praise of God, the soul and the intellect, the Hebrew language as a bride, why the book was written, and the dedication"),
     1: ("The First Gate", "How the book came to be, and in whose name it was composed: a friend's challenge, the defense of Hebrew, and the praise of the Nasi Josiah"),
+    2: ('The Second Gate', 'A preacher in the isles of the sea: a sermon on the false bride of this world, the grave and the hypocrites, and the preacher is Ḥever in disguise'),
+    3: ('The Third Gate', 'A glutton at a feast in Babylon silences the guests who mocked him, with a survey of the Hebrew poets of Spain that ends in praise of Judah Halevi'),
+    4: ('The Fourth Gate', 'Two poets quarrel before a judge over who is more eloquent: one praises the ant, the other the flea, and they turn out to be Ḥever and his son'),
+    5: ('The Fifth Gate', 'A company of friends in spring: twelve poets each praise one month of the year, from Nisan to Adar, and the drinkers of Damascus learn their praises by heart'),
+    6: ('The Sixth Gate', 'Ḥever tells how an old matchmaker tricked him into marrying a hideous bride, and how he fled on the wedding night'),
+    7: ('The Seventh Gate', 'Two champions at war: a battle between armies seen by travellers caught between them, and the boasts of two warriors who meet in single combat'),
+    8: ('The Eighth Gate', 'A letter that praises a prince when read forward and curses him when read backward, and two lines of verse that turn the same way'),
+    9: ('The Ninth Gate', 'Thirty poets set a disguised old man thirty biblical verses as poem endings; he caps each one, and he is Ḥever the Kenite'),
+    10: ('The Tenth Gate', "The villager's hospitality and the pious cock: a guest who says he is sick asks to eat the rooster, which escapes to the synagogue roof and preaches against its owners until it is spared"),
+    11: ('The Eleventh Gate', 'Three proofs of skill in Bethlehem: a poem in Hebrew, Arabic and Aramaic, a letter of praise with a resh in every word, and a second letter with no resh at all'),
+    12: ('The Twelfth Gate', "Miserliness crowned king of the Jews of the East: his dream, his prison and the dove's letter, the war of the communities against Generosity, and how generosity was lost"),
+    13: ('The Thirteenth Gate', 'On Judgment Day the soul and the body blame each other; the Intellect and the Inclination argue for the soul, and repentance wins'),
+    14: ('The Fourteenth Gate', "An old sage, asked by his students for a prayer, composes two: a hymn on God's unity and goodness, and a penitent's lament over sin and lust; then he is revealed as Ḥever the Kenite"),
+    15: ('The Fifteenth Gate', 'After a shipwreck, Ḥever the Kenite comforts Heman with a prayer to Moses the man of God, and the prayer restores his fortune'),
+    16: ('The Sixteenth Gate', 'Seven poets each praise their own poetry before Ḥever the Kenite, and he finds all seven equal'),
+    17: ('The Seventeenth Gate', 'The heretic and the believer: Ḥever describes the Samaritans and the Karaites, and tells of a debate in verse on whether the Law of Moses needs the sages'),
+    18: ('The Eighteenth Gate', 'How Hebrew poetry came from the Arabs to Spain: an old sage tells the history of the Spanish poets, gives the seven conditions of a good poem, and mocks the poets of Provence, France, Greece and the East'),
+    19: ('The Nineteenth Gate', 'Seven young men by the Euphrates argue which quality is best, and an old man, Ḥever in disguise, gives the prize to generosity'),
+    20: ('The Twentieth Gate', 'Seven veiled maidens bewitch Heman in the field, and the loveliest of them unveils to show Ḥever the Kenite with a long beard and a drawn sword'),
+    21: ('The Twenty-First Gate', 'Ḥever greets a hungry villager by a false name, pretends to grieve for his dead parents, feasts with him in the market, and leaves him to pay the bill'),
+    22: ('The Twenty-Second Gate', 'An Arab astrologer reads the stars and the sand at the city gate; when Ḥever and his friends ask when the exile will end, he denounces them, and only a just judge saves them'),
+    23: ('The Twenty-Third Gate', "Ḥever, robbed and beaten, runs off from Heman's hospitality, then comes back rich, and tells how a prince's request for a poem of mourning and joy made his fortune"),
+    24: ('The Twenty-Fourth Gate', 'The ignorant cantor: his blunders in the Sabbath prayers, a dispute on whether piyyutim belong in the service, and a poem against those who call prayer optional'),
+    25: ('The Twenty-Fifth Gate', 'A hunter with horse, hawk and hounds destroys a family of gazelles, and the old man draws the moral: all creatures prey on each other and are equal in death'),
+    26: ('The Twenty-Sixth Gate', 'Travel and staying at home: an old man in Basra tells the miseries of the road, then, when asked, its blessings, and at last tells his name, Ḥever'),
+    27: ('The Twenty-Seventh Gate', "Wine praised and condemned: an old drinker extols the vine, then at the company's request shows its evils, and many of them vow to give it up"),
+    28: ('The Twenty-Eighth Gate', "Heman's pilgrimage to Jerusalem: a lament for Zion, how the Jews came back to the city, the strife among them, and a meeting with Ḥever the Kenite"),
+    29: ('The Twenty-Ninth Gate', "A ragged father and his young son beg in a Nineveh synagogue in the winter cold; the son's speech opens the congregation's hearts and purses"),
+    30: ('The Thirtieth Gate', 'The traveling doctor: an old quack in the square sells cures for every disease to the crowd, and when unmasked, blames Time for his trade'),
+    31: ('The Thirty-First Gate', 'A veiled rider poses as a maiden in distress, makes a band of warriors bind one another, and dies by the knife Ḥever hid in his shoe'),
+    32: ('The Thirty-Second Gate', 'A contest in description: a young poet starts a verse on each of twenty things, from the pen to the moon, and an old man caps every one, until he reveals that he is Ḥever'),
+    33: ('The Thirty-Third Gate', 'A silent old man shows a company of poets how to make the "linked" poem, in a sermon and an alphabet of short poems with double-meaning rhymes, and then reveals that he is Ḥever'),
+    34: ('The Thirty-Fourth Gate', 'A boastful merchant shows his guest every part of his house, his wife, his servant boy and even his privy before any food comes, until the hungry guest runs away'),
+    35: ('The Thirty-Fifth Gate', "Ezra's tomb by the river: how a herdsman's dream found it, the light that rises over it at night, and two poems, at Ezra's grave and at Ezekiel's"),
+    36: ('The Thirty-Sixth Gate', "Ḥever, found drinking in a tavern, tells how he escaped a besieged city, boasted of his learning before a crowd, and answered a young man's questions on wisdom and conduct"),
+    37: ('The Thirty-Seventh Gate', 'The snake charmer: in the wilderness a man is bitten by a snake, and a stranger calls up all the serpents with spells and makes the guilty one suck out its own venom'),
+    38: ('The Thirty-Eighth Gate', 'A storm at sea: a calm old man on board sells the frightened passengers sea charms, and on dry land he turns out to be Ḥever'),
+    39: ('The Thirty-Ninth Gate', 'Day and Night argue about which of them is greater, until Night gives way, and the storyteller is revealed as Ḥever'),
     40: ("The Fortieth Gate", "The pen and the sword: which is more needed by men and by their wars"),
+    41: ('The Forty-First Gate', 'Man and woman: an old man and a bold woman argue in the market square over which of them the world depends on'),
+    42: ('The Forty-Second Gate', 'Generosity and miserliness: an old man argues for the closed hand against a young champion of giving, then concedes so that the churls may not boast, and is revealed as Ḥever'),
+    43: ('The Forty-Third Gate', 'The sea and the dry land: each boasts of its power and its merits and accuses the other, until their elders make peace between them'),
+    44: ('The Forty-Fourth Gate', 'An old teacher has fifty students each give a wise saying; when they finish, he names himself in verse as Ḥever the Kenite'),
+    45: ('The Forty-Fifth Gate', 'Twenty-four sages each tell a proverb of wisdom: the pious and the dead, mourners and lovers, misers, poets and boasters'),
+    46: ('The Forty-Sixth Gate', "Ḥever the Kenite's tour of the Jewish communities of Spain, Provence, Egypt, the Land of Israel, Syria and Iraq: praise of their generous and learned men, and satire of the wicked and the mean"),
+    47: ('The Forty-Seventh Gate', 'Eight cities, from Alexandria to Babylon, each boast in turn that the first place is theirs'),
+    48: ('The Forty-Eighth Gate', "The lovesick man and the free physician: two prescriptions for love, one made from the beloved's charms and one from the lover's sorrows"),
+    49: ('The Forty-Ninth Gate', 'A spring wind leads Heman into a garden, where he praises its fruits one by one in short poems, then finds Ḥever the Kenite among a company of young poets'),
+    50: ('The Fiftieth Gate', 'Ḥever recites his separate poems to a company of poets: repentance and Zion, praise and blame of patrons, wine, love and satire, and an account of the journey to Jerusalem, Damascus and Aleppo'),
 }
 # Project Ben-Yehuda texts: gate number -> (work id, Hebrew subtitle). Gate 35 is not on Project Ben-Yehuda.
 BY = {
@@ -121,7 +169,10 @@ def halves(text, fmt):
     """A verse line: two halves, shown apart."""
     if " / " not in text:
         return fmt(text)
-    a, b = text.split(" / ", 1)
+    parts = text.split(" / ")
+    if len(parts) > 2:  # a line in three parts (the trilingual poem of gate 11)
+        return " ".join(f'<span class="h3">{fmt(p)}</span>' for p in parts)
+    a, b = parts
     return f'<span class="h1">{fmt(a)}</span> <span class="h2">{fmt(b)}</span>'
 
 
@@ -147,7 +198,9 @@ def gate_page(num, title, subtitle):
 
     rows, n = [], 0
     for h, x in zip(hb, en):
-        rows.append(f'<section class="blk {h["kind"]}">')
+        rows.append(f'<section class="blk {h["kind"]}{" supp" if h.get("source") else ""}">')
+        if h.get("source"):
+            rows.append(f'<p class="supp-label">Not in the Ben-Yehuda text; from {e(h["source"])}, unvocalized</p>')
         for hl, xl in zip(h["lines"], x):
             n += 1
             rows.append(f'<div class="row" id="l{n}"><a class="ln" href="#l{n}">{n}</a>'
@@ -157,6 +210,17 @@ def gate_page(num, title, subtitle):
     note_rows = "\n".join(
         f'<li id="n{k}"><a href="#r{k}">⚠{k}</a> <span lang="he" dir="rtl" class="he-inline">{e(v["he"])}</span>'
         f' — {e(v["note"], quote=False)}</li>' for k, v in notes.items())
+    if he.get("source_id"):
+        srclink = (f'<p class="srclink"><a href="{BYURL.format(he["source_id"])}">'
+                   f'{"The introduction" if num == 0 else f"Gate {num}"} on Project Ben-Yehuda ↗</a></p>')
+        srcnote = f'Hebrew text: <a href="{BYURL.format(he["source_id"])}">Project Ben-Yehuda</a>.'
+        if any(b.get("source") for b in hb):
+            srcnote += " Passages missing there are added from Kaminka's edition (Warsaw 1899), unvocalized, and marked."
+    else:
+        srclink = (f'<p class="srclink"><a href="https://archive.org/details/TachkemoniYehudaAlchariziWarsaw1899">'
+                   f'Kaminka\'s edition (Warsaw 1899) on archive.org ↗</a></p>')
+        srcnote = (f"Hebrew text: {e(he.get('source', 'Kaminka 1899'))}, unvocalized, transcribed from the scan; this gate "
+                   f"is not on Project Ben-Yehuda.")
     keys = sorted(GATES)
     i = keys.index(num)
     label = lambda k: "Introduction" if k == 0 else f"Gate {k}"
@@ -169,13 +233,13 @@ def gate_page(num, title, subtitle):
 {f'<p class="sub-he" lang="he" dir="rtl">{e(he["subtitle"])}</p>' if he["subtitle"] else ""}
 <h1>{e(title)}</h1>
 <p class="sub">{e(subtitle)}</p>
-<p class="srclink"><a href="{BYURL.format(he["source_id"])}">{"The introduction" if num == 0 else f"Gate {num}"} on Project Ben-Yehuda ↗</a></p>
+{srclink}
 <details class="about"><summary>About this text</summary>
 <p class="meta">{n} lines. One row is one rhyme unit of the rhymed prose, or one line of verse (its two halves set apart).
 References in <span class="ref">[gray brackets]</span> are the translator's identifications of biblical phrases.
 <a class="warn" href="#notes">⚠</a> marks an uncertain rendering.
 Each line number is a link to that line.
-Hebrew text: <a href="https://benyehuda.org/read/{he["source_id"]}">Project Ben-Yehuda</a>.</p>
+{srcnote}</p>
 </details>
 </header>
 <main>
@@ -241,9 +305,9 @@ this one, with a list of further reading.</p>
 <div class="tablewrap">
 <table>
 <tr><th>Source</th><th>Contents</th><th>Notes</th></tr>
-<tr><td><a href="https://benyehuda.org/author/86">Project Ben-Yehuda</a></td><td>The introduction and 49 of the 50 gates, one text for each (gate 35 is not there)</td><td>Vocalized. In the project's <a href="https://github.com/projectbenyehuda/public_domain_dump">public-domain dump</a> (folder <code>txt/p86/</code>). Most gates name the edition published by Maḥbarot le-Sifrut with Mosad ha-Rav Kook, Tel Aviv. This is the text used here.</td></tr>
+<tr><td><a href="https://benyehuda.org/author/86">Project Ben-Yehuda</a></td><td>The introduction and 49 of the 50 gates, one text for each (gate 35 is not there; gates 5, 21 and 23 stop before their end)</td><td>Vocalized. In the project's <a href="https://github.com/projectbenyehuda/public_domain_dump">public-domain dump</a> (folder <code>txt/p86/</code>). Most gates name the edition published by Maḥbarot le-Sifrut with Mosad ha-Rav Kook, Tel Aviv. This is the text used here.</td></tr>
 <tr><td><a href="https://archive.org/details/tahkemoni00hari">Lagarde, Göttingen 1883</a></td><td>Scan of P. de Lagarde's edition (400 ppi)</td><td>For a check of readings.</td></tr>
-<tr><td><a href="https://archive.org/details/TachkemoniYehudaAlchariziWarsaw1899">Kaminka, Warsaw 1899</a></td><td>Scan of A. Kaminka's edition with commentary</td><td>For a check of readings and allusions.</td></tr>
+<tr><td><a href="https://archive.org/details/TachkemoniYehudaAlchariziWarsaw1899">Kaminka, Warsaw 1899</a></td><td>Scan of A. Kaminka's edition with commentary</td><td>The source of gate 35 and of the passages missing from the Ben-Yehuda text (marked on the page), unvocalized. The end of every gate was compared with this edition.</td></tr>
 </table>
 </div>
 
